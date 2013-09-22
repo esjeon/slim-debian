@@ -23,7 +23,8 @@ Panel::Panel(Display* dpy, int scr, Window root, Cfg* config,
     Root = root;
     cfg = config;
 
-    session = "";
+    //EON: session = "";
+    session = cfg->getFirstSession();
 
     // Init GC
     XGCValues gcv;
@@ -186,7 +187,8 @@ void Panel::ClosePanel() {
 }
 
 void Panel::ClearPanel() {
-    session = "";
+    //EON: session = "";
+    session = cfg->getFirstSession();
     Reset();
     XClearWindow(Dpy, Root);
     XClearWindow(Dpy, Win);

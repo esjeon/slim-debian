@@ -302,6 +302,12 @@ void Cfg::fillSessionList(){
     }
 }
 
+string Cfg::getFirstSession() const {
+    if (sessions.size() < 1)
+        return "";
+    return sessions[0];
+}
+
 string Cfg::nextSession(string current) {
     if (sessions.size() < 1)
         return current;
